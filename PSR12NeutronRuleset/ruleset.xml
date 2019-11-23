@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset name="PSR12NeutronRuleset">
+    <description>PSR-12 and Neutron hybrid Ruleset.</description>
+
+    <rule ref="PSR12" />
+
+    <!--
+    <rule ref="severity:0 instead of exclude??">
+        <severity>0</severity>
+    </rule>
+    -->
+
+    <rule ref="NeutronRuleset">
+        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing.Missing" />
+        <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket" />
+        <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
+    </rule>
+
+    <rule ref="WordPress-Core">
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
+        <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceBeforeClose" />
+        <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen" />
+        <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine" />
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
+        <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
+        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+        <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.OpenBraceNotSameLine" />
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis" />
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.ExtraSpaceAfterCloseParenthesis" />
+        <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys" />
+        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceBeforeArrayCloser" />
+        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceAfterArrayOpener" />
+    </rule>
+    <rule ref="WordPress-Docs" />
+    <rule ref="WordPress-Extra" />
+</ruleset>

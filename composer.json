@@ -1,0 +1,14 @@
+{
+    "name": "szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset",
+    "type": "phpcodesniffer-standard",
+    "description": "A hybrid PHPCS ruleset for OOP WordPress development",
+    "license": "MIT",
+    "require": {
+        "php": "~7.1",
+        "squizlabs/php_codesniffer": "^3.5.2",
+        "automattic/phpcs-neutron-ruleset": "^3.2.0"
+    },
+    "suggest": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+    }
+}
