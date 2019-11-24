@@ -4,26 +4,51 @@
 
     <rule ref="PSR12" />
 
+    <!-- File rules -->
+    <!-- <rule ref="Generic.Files.FilePermissions" /> https://github.com/squizlabs/PHP_CodeSniffer/issues/1808 -->
+    <rule ref="PEAR.Commenting.FileComment">
+        <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag" />
+        <exclude name="PEAR.Commenting.FileComment.MissingVersion" />
+    </rule>
+
+    <!-- Namespace rule -->
+    <!-- PSR1.Classes.ClassDeclaration.MissingNamespace -->
+
+    <!-- Class and method rules -->
+    <rule ref="PEAR.Commenting.ClassComment">
+        <exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag" />
+        <exclude name="PEAR.Commenting.ClassComment.MissingPackageTag" />
+        <exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag" />
+        <exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag" />
+        <exclude name="PEAR.Commenting.ClassComment.MissingLinkTag" />
+    </rule>
+
+    <!-- Use camelCase variable names. -->
+    <rule ref="Squiz.NamingConventions.ValidVariableName" />
+
+    <!-- Use camelCase function names. -->
+    <rule ref="Squiz.NamingConventions.ValidFunctionName" />
+
     <!--
     <rule ref="severity:0 instead of exclude??">
         <severity>0</severity>
+        <type>warning</type>
     </rule>
     -->
 
     <rule ref="NeutronRuleset">
+        <!-- Do not add spaces everywhere. -->
         <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing.Missing" />
         <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket" />
         <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
     </rule>
 
     <rule ref="WordPress-Core">
+        <!-- Do not add spaces everywhere. -->
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
         <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceBeforeClose" />
         <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen" />
-        <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine" />
-        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
         <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
-        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
         <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
         <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.OpenBraceNotSameLine" />
         <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis" />
@@ -32,6 +57,11 @@
         <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys" />
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceBeforeArrayCloser" />
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceAfterArrayOpener" />
+        <!-- Put braces on separates lines. -->
+        <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine" />
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
+        <!-- Use camelCase variable names. -->
+        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
     </rule>
     <rule ref="WordPress-Docs" />
     <rule ref="WordPress-Extra" />
