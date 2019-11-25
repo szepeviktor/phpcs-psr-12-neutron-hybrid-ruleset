@@ -8,12 +8,15 @@
 
 - PSR-12 Extended Coding Style as starting point
 - All [WPCS](https://github.com/WordPress/WordPress-Coding-Standards) features through Neutron
+- Strict types
 - File, class and method comments
-- `Generic.Files.FilePermissions` and more coming soon!
+- Handpicked [Slevomat](https://github.com/slevomat/coding-standard) rules
+- `Generic.Files.FilePermissions` is coming soon!
 
-# Usage
+### Usage
 
 ```bash
 composer require --dev szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset
+
 ./vendor/bin/phpcs --standard=PSR12NeutronRuleset src/
 ```

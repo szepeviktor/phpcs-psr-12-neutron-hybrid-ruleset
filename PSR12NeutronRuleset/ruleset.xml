@@ -8,6 +8,7 @@
     <!-- <rule ref="Generic.Files.FilePermissions" /> https://github.com/squizlabs/PHP_CodeSniffer/issues/1808 -->
     <rule ref="PEAR.Commenting.FileComment">
         <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag" />
+        <exclude name="PEAR.Commenting.FileComment.MissingPackageTag" />
         <exclude name="PEAR.Commenting.FileComment.MissingVersion" />
     </rule>
 
@@ -38,9 +39,10 @@
 
     <rule ref="NeutronRuleset">
         <!-- Do not add spaces everywhere. -->
-        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing.Missing" />
         <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket" />
         <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
+        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing.Missing" />
+        <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable" />
     </rule>
 
     <rule ref="WordPress-Core">
@@ -50,10 +52,7 @@
         <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen" />
         <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
         <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
-        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.OpenBraceNotSameLine" />
-        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis" />
-        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
-        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.ExtraSpaceAfterCloseParenthesis" />
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing" />
         <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys" />
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceBeforeArrayCloser" />
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceAfterArrayOpener" />
@@ -65,4 +64,93 @@
     </rule>
     <rule ref="WordPress-Docs" />
     <rule ref="WordPress-Extra" />
+
+    <!-- Strict typing -->
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="newlinesCountBetweenOpenTagAndDeclare" value="2" />
+            <property name="newlinesCountAfterDeclare" value="2" />
+            <property name="spacesCountAroundEqualsSign" value="0" />
+        </properties>
+    </rule>
+    <!-- Namespace -->
+    <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile" />
+    <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration" />
+    <!-- Functional -->
+    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration" />
+    <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint" />
+    <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly" />
+    <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation" />
+    <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants" />
+    <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEmpty" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit" />
+    <rule ref="SlevomatCodingStandard.Functions.StaticClosure" />
+    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators" />
+    <rule ref="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators" />
+    <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator" />
+    <!-- Cleaning -->
+    <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements" />
+    <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure" />
+    <rule ref="SlevomatCodingStandard.Functions.UnusedParameter" />
+    <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias" />
+    <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion" />
+    <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc" />
+    <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking" />
+    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
+    <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable" />
+    <rule ref="SlevomatCodingStandard.Variables.UnusedVariable" />
+    <rule ref="SlevomatCodingStandard.Variables.UselessVariable" />
+    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
+    <!-- Formatting -->
+    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma" />
+    <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference" />
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming" />
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming" />
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.NewWithParentheses" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
+    <rule ref="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax" />
+    <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints" />
+    <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition" />
+    <rule ref="SlevomatCodingStandard.PHP.TypeCast" />
+    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility" />
+    <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue" />
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing" />
+    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
+    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameAfterKeyword">
+        <properties>
+            <property name="keywordsToCheck" type="array">
+                <element value="T_EXTENDS"/>
+                <element value="T_IMPLEMENTS"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions" />
+    <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash" />
+    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
+    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation">
+        <properties>
+            <property name="forbiddenAnnotations" type="array">
+                <element value="@package" />
+                <element value="@copyright" />
+            </property>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Commenting.EmptyComment" />
+    <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment" />
+    <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator" />
 </ruleset>
