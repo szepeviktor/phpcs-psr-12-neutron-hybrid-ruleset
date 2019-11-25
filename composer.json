@@ -1,7 +1,7 @@
 {
     "name": "szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset",
     "type": "phpcodesniffer-standard",
-    "description": "A hybrid PHPCS ruleset for OOP WordPress development",
+    "description": "Hybrid PHPCS ruleset for OOP WordPress development",
     "license": "MIT",
     "require": {
         "php": "~7.1",
