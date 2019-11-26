@@ -25,10 +25,17 @@
     </rule>
 
     <!-- Use camelCase variable names. -->
-    <rule ref="Squiz.NamingConventions.ValidVariableName" />
+    <rule ref="Squiz.NamingConventions.ValidVariableName">
+        <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
+    </rule>
 
     <!-- Use camelCase function names. -->
-    <rule ref="Squiz.NamingConventions.ValidFunctionName" />
+    <rule ref="Squiz.NamingConventions.ValidFunctionName">
+        <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore" />
+    </rule>
+
+    <!-- Array declaration rules. -->
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing" />
 
     <!--
     <rule ref="severity:0 instead of exclude??">
@@ -51,16 +58,17 @@
         <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceBeforeClose" />
         <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen" />
         <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
-        <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
+        <exclude name="WordPress.WhiteSpace.OperatorSpacing" />
         <exclude name="WordPress.WhiteSpace.ControlStructureSpacing" />
-        <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys" />
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceBeforeArrayCloser" />
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.NoSpaceAfterArrayOpener" />
+        <exclude name="WordPress.WhiteSpace.CastStructureSpacing" />
+        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing" />
+        <exclude name="WordPress.Arrays.ArrayIndentation" />
+        <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
         <!-- Put braces on separates lines. -->
         <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine" />
         <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
         <!-- Use camelCase variable names. -->
-        <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+        <exclude name="WordPress.NamingConventions.ValidVariableName" />
     </rule>
     <rule ref="WordPress-Docs" />
     <rule ref="WordPress-Extra" />
@@ -101,10 +109,10 @@
     <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" />
     <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias" />
 
-    <!-- Not released yet -->
+<!-- Not released yet
     <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion" />
     <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc" />
-
+-->
     <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking" />
     <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
     <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable" />
