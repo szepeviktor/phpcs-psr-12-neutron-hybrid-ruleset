@@ -69,7 +69,9 @@
         <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
         <!-- Use camelCase variable names. -->
         <exclude name="WordPress.NamingConventions.ValidVariableName" />
-    </rule>
+         <!-- Use camelCase function names. -->
+        <exclude name="WordPress.NamingConventions.ValidFunctionName" />
+   </rule>
     <rule ref="WordPress-Docs" />
     <rule ref="WordPress-Extra" />
 
