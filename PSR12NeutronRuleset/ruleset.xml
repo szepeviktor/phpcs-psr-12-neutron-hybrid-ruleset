@@ -4,6 +4,25 @@
 
     <rule ref="PSR12" />
 
+    <!-- Bad parts of PHP -->
+    <rule ref="Generic.PHP.NoSilencedErrors" />
+    <rule ref="Squiz.PHP.DiscouragedFunctions">
+        <properties>
+            <!--
+            * env() is for frameworks only
+            * ini_set() - PHP environment belongs to the server
+            * compact(), list() and extract() convert array<->value
+            * eval() is dangerous!
+            * echo, print and print_r() disturb templating
+            * var_dump() is a debugger function
+            * error_log() has special use
+            * define() is for global constants
+            -->
+            <property name="forbiddenFunctions" type="array"
+                value="env=>null,ini_set=>null,compact=>null,list=>null,extract=>null,eval=>null,echo=>null,print=>null,print_r=>null,var_dump=>null,error_log=>null,define=>null" />
+        </properties>
+    </rule>
+
     <!-- File rules -->
     <!-- <rule ref="Generic.Files.FilePermissions" /> https://github.com/squizlabs/PHP_CodeSniffer/issues/1808 -->
     <rule ref="PEAR.Commenting.FileComment">
@@ -71,9 +90,13 @@
         <exclude name="WordPress.NamingConventions.ValidVariableName" />
          <!-- Use camelCase function names. -->
         <exclude name="WordPress.NamingConventions.ValidFunctionName" />
-   </rule>
+    </rule>
     <rule ref="WordPress-Docs" />
     <rule ref="WordPress-Extra" />
+
+<!--
+Look&See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
+-->
 
     <!-- Strict typing -->
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
@@ -87,8 +110,8 @@
     <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile" />
     <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration" />
     <!-- Functional -->
-    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration" />
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint" />
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint" />
     <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly" />
     <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation" />
     <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants" />
@@ -102,6 +125,7 @@
     <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators" />
     <rule ref="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators" />
     <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator" />
+    <rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator" />
     <!-- Cleaning -->
     <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements" />
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure" />
@@ -110,11 +134,8 @@
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
     <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" />
     <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias" />
-
-<!-- Not released yet
     <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion" />
     <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc" />
--->
     <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking" />
     <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
     <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable" />
@@ -133,6 +154,7 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator" />
     <rule ref="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator" />
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
+    <rule ref="SlevomatCodingStandard.Functions.DisallowArrowFunction" />
     <rule ref="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax" />
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints" />
     <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition" />
@@ -164,6 +186,7 @@
     <rule ref="SlevomatCodingStandard.Commenting.EmptyComment" />
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment" />
     <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment" />
+    <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment" />
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn" />
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator" />
 </ruleset>
