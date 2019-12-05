@@ -11,5 +11,8 @@
     },
     "suggest": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+    },
+    "scripts": {
+        "lint": "tests/xmllint.sh"
     }
 }

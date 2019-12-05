@@ -1,3 +1,4 @@
 /.gitattributes
 /composer.lock
 /vendor/
+/tmp/
