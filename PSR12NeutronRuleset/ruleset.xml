@@ -23,7 +23,7 @@
     </rule>
 
     <!-- File rules -->
-    <!-- <rule ref="Generic.Files.FilePermissions"/> https://github.com/squizlabs/PHP_CodeSniffer/issues/1808 -->
+    <rule ref="Generic.Files.ExecutableFile"/>
     <rule ref="PEAR.Commenting.FileComment">
         <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
         <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>

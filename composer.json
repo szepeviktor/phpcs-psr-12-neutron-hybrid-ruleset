@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "~7.1",
-        "squizlabs/php_codesniffer": "^3.5.2",
+        "squizlabs/php_codesniffer": "^3.5.3",
         "automattic/phpcs-neutron-ruleset": "^3.2.0",
         "slevomat/coding-standard": "^6.0.0"
     },

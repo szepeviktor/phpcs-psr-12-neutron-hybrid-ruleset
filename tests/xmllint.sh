@@ -3,7 +3,7 @@
 # Lint ruleset XML file.
 #
 # BASH-VERSION  :4.2+
-# DEPENDS       :apt-get install libxml2-utils
+# DEPENDS       :apt-get install wget libxml2-utils
 
 set -e
 

@@ -8,10 +8,10 @@
 
 - PSR-12 Extended Coding Style as starting point
 - All [WPCS](https://github.com/WordPress/WordPress-Coding-Standards) features through Neutron
+- File permission bits
 - Strict types
 - File, class and method comments
 - Handpicked [Slevomat](https://github.com/slevomat/coding-standard) rules
-- `Generic.Files.FilePermissions` is coming soon!
 
 ### Usage
 
