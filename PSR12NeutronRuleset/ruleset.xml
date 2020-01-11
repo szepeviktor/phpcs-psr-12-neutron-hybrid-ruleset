@@ -42,20 +42,18 @@
         <exclude name="PEAR.Commenting.ClassComment.MissingLinkTag"/>
     </rule>
 
-    <!-- Use camelCase variable names. -->
+    <!-- Use camelCase -->
+    <rule ref="Squiz.NamingConventions.ValidFunctionName">
+        <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+    </rule>
     <rule ref="Squiz.NamingConventions.ValidVariableName">
         <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
     </rule>
 
-    <!-- Use camelCase function names. -->
-    <rule ref="Squiz.NamingConventions.ValidFunctionName">
-        <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
-    </rule>
-
-    <!-- Array declaration rules. -->
+    <!-- Array declaration rules -->
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
 
-    <!--
+    <!-- TODO
     <rule ref="severity:0 instead of exclude??">
         <severity>0</severity>
         <type>warning</type>
@@ -63,37 +61,52 @@
     -->
 
     <rule ref="NeutronRuleset">
-        <!-- Do not add spaces everywhere. -->
+        <exclude name="Generic.Classes.OpeningBraceSameLine"/>
+        <exclude name="Generic.Formatting.SpaceAfterCast"/>
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+        <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing"/>
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
         <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket"/>
         <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket"/>
-        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing.Missing"/>
-        <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
-    </rule>
-
-    <rule ref="WordPress-Core">
-        <!-- Do not add spaces everywhere. -->
-        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
-        <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceBeforeClose"/>
-        <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen"/>
         <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
-        <exclude name="WordPress.WhiteSpace.OperatorSpacing"/>
-        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
-        <exclude name="WordPress.WhiteSpace.CastStructureSpacing"/>
+
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing"/>
         <exclude name="WordPress.Arrays.ArrayIndentation"/>
         <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions"/>
-        <!-- Put braces on separates lines. -->
-        <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine"/>
-        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine"/>
-        <!-- Use camelCase variable names. -->
-        <exclude name="WordPress.NamingConventions.ValidVariableName"/>
-        <!-- Use camelCase function names. -->
+        <exclude name="WordPress.WhiteSpace.CastStructureSpacing"/>
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
+        <exclude name="WordPress.WhiteSpace.DisallowInlineTabs"/>
+        <exclude name="WordPress.WhiteSpace.OperatorSpacing"/>
+        <exclude name="WordPress.WhiteSpace.PrecisionAlignment"/>
         <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
+        <exclude name="WordPress.NamingConventions.ValidVariableName"/>
+
+        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing.Missing"/>
+
+        <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
     </rule>
+    <!-- WordPress-Core opposite rules -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
+    <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+    <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing">
+        <properties>
+            <property name="spacing" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1"/>
+            <property name="requiredSpacesAfterOpen" value="0"/>
+            <property name="requiredSpacesBeforeClose" value="0"/>
+        </properties>
+    </rule>
+
     <rule ref="WordPress-Docs"/>
+
     <rule ref="WordPress-Extra"/>
 
-    <!--
+    <!-- TODO
     Look&See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
     -->
 
