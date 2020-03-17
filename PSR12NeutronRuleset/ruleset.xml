@@ -24,6 +24,7 @@
 
     <!-- File rules -->
     <rule ref="Generic.Files.ExecutableFile"/>
+    <rule ref="Generic.Files.OneObjectStructurePerFile"/>
     <rule ref="PEAR.Commenting.FileComment">
         <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
         <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
