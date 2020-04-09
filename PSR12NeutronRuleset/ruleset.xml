@@ -83,6 +83,7 @@
         <exclude name="WordPress.NamingConventions.ValidVariableName"/>
 
         <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing.Missing"/>
+        <exclude name="NeutronStandard.Constants.DisallowDefine.Define"/>
 
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
     </rule>
