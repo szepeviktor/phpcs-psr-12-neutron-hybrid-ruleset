@@ -17,7 +17,6 @@ class ConcatenationUsageSniff implements Sniff
     public function register()
     {
         return [\T_STRING_CONCAT];
-
     }
 
     /**
@@ -25,6 +24,6 @@ class ConcatenationUsageSniff implements Sniff
      */
     public function process(File $phpcsFile, $stackPtr)
     {
-        $phpcsFile->addError('Logical operator "." is prohibited', $stackPtr, 'NotAllowed');
+        $phpcsFile->addError('Concat operator is prohibited', $stackPtr, 'NotAllowed');
     }
 }
