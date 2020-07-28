@@ -2,6 +2,8 @@
 
 /**
  * Prohibit usage of "." operator.
+ *
+ * @package PSR12NeutronRuleset
  */
 
 namespace PSR12NeutronRuleset\Sniffs\Strings;
@@ -9,10 +11,16 @@ namespace PSR12NeutronRuleset\Sniffs\Strings;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
 
+/**
+ * ConcatenationUsage sniff.
+ */
 class ConcatenationUsageSniff implements Sniff
 {
+
     /**
-     * @return array<int>
+     * Register sniff.
+     *
+     * @return array<int, int>
      */
     public function register()
     {
@@ -20,9 +28,14 @@ class ConcatenationUsageSniff implements Sniff
     }
 
     /**
+     * Process sniff.
+     *
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile 1
+     * @param int                         $stackPtr  2
+     *
      * @return void
      */
-    public function process(File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, int $stackPtr)
     {
         $phpcsFile->addError('Concat operator is prohibited', $stackPtr, 'NotAllowed');
     }
