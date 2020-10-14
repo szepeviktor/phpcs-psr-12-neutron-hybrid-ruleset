@@ -35,7 +35,7 @@ class ConcatenationUsageSniff implements Sniff
      *
      * @return void
      */
-    public function process(File $phpcsFile, int $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $phpcsFile->addError('Concat operator is prohibited', $stackPtr, 'NotAllowed');
     }
