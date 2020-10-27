@@ -1,0 +1,30 @@
+# TravisCI configuration for szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset
+
+language: php
+os:
+  - linux
+dist: bionic
+
+php:
+  - "7.1"
+  - "7.2"
+  - "7.3"
+  - "7.4"
+  # PHP 8.0
+  - "nightly"
+
+cache:
+  directories:
+    - "${HOME}/.composer/cache"
+
+before_install:
+  - "phpenv config-rm xdebug.ini"
+  - "composer self-update --1"
+  - "composer validate --strict"
+
+install:
+  - "composer update --no-interaction --verbose"
+
+script:
+  - "composer run-script test:cs"
+  - "composer run-script test:xml"

@@ -207,5 +207,8 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
 
     <!-- Own rules -->
-    <!-- <rule ref="PSR12NeutronRuleset.Strings.ConcatenationUsage"/> -->
+    <rule ref="PSR12NeutronRuleset.Strings.ConcatenationUsage">
+        <severity>0</severity>
+        <type>warning</type>
+    </rule>
 </ruleset>
