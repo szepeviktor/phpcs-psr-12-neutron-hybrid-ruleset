@@ -1,9 +1,13 @@
 # TravisCI configuration for szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset
 
-language: php
+language: "php"
 os:
-  - linux
-dist: bionic
+  - "linux"
+dist: "bionic"
+
+addons:
+  apt:
+    - "libxml2-utils"
 
 php:
   - "7.1"
