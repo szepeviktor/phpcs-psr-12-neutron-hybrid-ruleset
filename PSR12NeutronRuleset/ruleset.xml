@@ -143,7 +143,6 @@
     <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
     <rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
     <!-- Cleaning -->
-    <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
     <rule ref="SlevomatCodingStandard.Functions.UnusedParameter"/>
     <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
