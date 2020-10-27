@@ -10,8 +10,8 @@ php:
   - "7.2"
   - "7.3"
   - "7.4"
-  # PHP 8.0
-  - "nightly"
+#  # PHP 8.0
+#  - "nightly"
 
 jobs:
   include:
@@ -22,6 +22,12 @@ jobs:
           - "libxml2-utils"
       script:
         - "composer run-script test:xml"
+
+    # automattic/phpcs-neutron-ruleset v3.3.0 requires php ~7.0
+    - name: "PHP 8.0 :("
+      php: "nightly"
+      install:
+        - "composer update --no-interaction --verbose --ignore-platform-reqs"
 
 cache:
   directories:
