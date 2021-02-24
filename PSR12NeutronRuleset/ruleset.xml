@@ -25,6 +25,7 @@
     <!-- File rules -->
     <rule ref="Generic.Files.ExecutableFile"/>
     <rule ref="Generic.Files.OneObjectStructurePerFile"/>
+    <rule ref="Squiz.Classes.ClassFileName"/>
     <rule ref="PEAR.Commenting.FileComment">
         <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
         <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
@@ -84,8 +85,9 @@
 
         <exclude name="Squiz.Operators.IncrementDecrementUsage"/>
 
-        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing.Missing"/>
-        <exclude name="NeutronStandard.Constants.DisallowDefine.Define"/>
+        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing"/>
+        <exclude name="NeutronStandard.Constants.DisallowDefine"/>
+        <exclude name="NeutronStandard.StrictTypes.RequireStrictTypes"/>
 
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
     </rule>
@@ -127,7 +129,12 @@
     <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration"/>
     <!-- Functional -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
+        <properties>
+            <!-- Support PHP 7.1 -->
+            <property name="enableNativeTypeHint" value="false"/>
+        </properties>
+    </rule>
     <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
     <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
     <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants"/>
@@ -204,6 +211,11 @@
     <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
+
+    <rule ref="Generic.Metrics.CyclomaticComplexity">
+        <severity>0</severity>
+        <type>warning</type>
+    </rule>
 
     <!-- Own rules -->
     <rule ref="PSR12NeutronRuleset.Strings.ConcatenationUsage">
