@@ -6,12 +6,11 @@ os:
 dist: "bionic"
 
 php:
-  - "7.1"
-  - "7.2"
-  - "7.3"
+  - "8.0"
   - "7.4"
-#  # PHP 8.0
-#  - "nightly"
+  - "7.3"
+  - "7.2"
+  - "7.1"
 
 jobs:
   include:
@@ -23,11 +22,11 @@ jobs:
       script:
         - "composer run-script test:xml"
 
-    # automattic/phpcs-neutron-ruleset v3.3.0 requires php ~7.0
-    - name: "PHP 8.0 :("
-      php: "nightly"
-      install:
-        - "composer update --no-interaction --verbose --ignore-platform-reqs"
+    # https://github.com/Automattic/phpcs-neutron-ruleset/pull/10
+    #- name: "PHP 8.0 :("
+    #  php: "nightly"
+    #  install:
+    #    - "composer update --no-interaction --verbose --ignore-platform-reqs"
 
 cache:
   directories:
