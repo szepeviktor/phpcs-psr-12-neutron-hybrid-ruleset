@@ -24,3 +24,10 @@ composer require --dev szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset
 
 ./vendor/bin/phpcs --standard=PSR12NeutronRuleset src/
 ```
+
+### About the `@package` tag
+
+- The origins of the `@package` tag are in [PEAR](https://pear.php.net/manual/en/standards.header.php)
+  where packages are called for example `Net_Ping`
+- You can put your Composer package name there: `yoast/phpunit-polyfills`
+- Or you can use your WordPress.org plugin slug: `wordpress-seo`
