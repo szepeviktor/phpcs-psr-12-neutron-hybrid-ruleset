@@ -24,7 +24,7 @@ class ConcatenationUsageSniff implements Sniff
      */
     public function register()
     {
-        return [\T_STRING_CONCAT];
+        return [\T_STRING_CONCAT, \T_CONCAT_EQUAL];
     }
 
     /**
