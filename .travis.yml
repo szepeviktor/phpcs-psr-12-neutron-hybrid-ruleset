@@ -14,7 +14,7 @@ php:
 
 jobs:
   include:
-    - name: "Lint ruleset XML file"
+    - name: "Validate ruleset XML file"
       php: "7.4"
       addons:
         apt:
@@ -22,19 +22,12 @@ jobs:
       script:
         - "composer run-script test:xml"
 
-    # https://github.com/Automattic/phpcs-neutron-ruleset/pull/10
-    #- name: "PHP 8.0 :("
-    #  php: "nightly"
-    #  install:
-    #    - "composer update --no-interaction --verbose --ignore-platform-reqs"
-
 cache:
   directories:
     - "${HOME}/.composer/cache"
 
 before_install:
   - "phpenv config-rm xdebug.ini"
-  - "composer self-update --1"
   - "composer validate --strict"
 
 install:

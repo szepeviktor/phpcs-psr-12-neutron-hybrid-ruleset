@@ -18,10 +18,9 @@ hash xmllint
 # Create temporary directory
 mkdir -p tmp
 
-# Download XML schema definitions
-wget -nv -N -P tmp/ "https://github.com/squizlabs/PHP_CodeSniffer/raw/master/phpcs.xsd"
+# Download XML schema definition
 wget -nv -N -P tmp/ "https://www.w3.org/2012/04/XMLSchema.xsd"
 
-xmllint --noout --schema tmp/XMLSchema.xsd tmp/phpcs.xsd
-xmllint --noout --schema tmp/phpcs.xsd "$RULESET"
+xmllint --noout --schema tmp/XMLSchema.xsd vendor/squizlabs/php_codesniffer/phpcs.xsd
+xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd "$RULESET"
 diff -B "$RULESET" <(XMLLINT_INDENT="    " xmllint --format "$RULESET")
