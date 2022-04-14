@@ -18,7 +18,20 @@
             * error_log() has special use
             * define() is for global constants
             -->
-            <property name="forbiddenFunctions" type="array" value="env=&gt;null,ini_set=&gt;null,compact=&gt;null,list=&gt;null,extract=&gt;null,eval=&gt;null,echo=&gt;null,print=&gt;null,print_r=&gt;null,var_dump=&gt;null,error_log=&gt;null,define=&gt;null"/>
+            <property name="forbiddenFunctions" type="array">
+                <element key="env" value="null"/>
+                <element key="ini_set" value="null"/>
+                <element key="compact" value="null"/>
+                <element key="list" value="null"/>
+                <element key="extract" value="null"/>
+                <element key="eval" value="null"/>
+                <element key="echo" value="null"/>
+                <element key="print" value="null"/>
+                <element key="print_r" value="null"/>
+                <element key="var_dump" value="null"/>
+                <element key="error_log" value="null"/>
+                <element key="define" value="null"/>
+            </property>
         </properties>
     </rule>
 
