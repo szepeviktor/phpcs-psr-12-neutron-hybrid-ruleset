@@ -95,6 +95,8 @@
         <exclude name="WordPress.WhiteSpace.PrecisionAlignment"/>
         <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
         <exclude name="WordPress.NamingConventions.ValidVariableName"/>
+        <!-- Prefer Generic.PHP.NoSilencedErrors -->
+        <exclude name="WordPress.PHP.NoSilencedErrors"/>
 
         <exclude name="Squiz.Operators.IncrementDecrementUsage"/>
 
