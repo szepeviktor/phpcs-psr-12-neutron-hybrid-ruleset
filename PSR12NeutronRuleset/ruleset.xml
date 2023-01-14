@@ -149,7 +149,7 @@
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
         <properties>
-            <!-- Support PHP 7.1 -->
+            <!-- Support PHP 7.2 -->
             <property name="enableNativeTypeHint" value="false"/>
         </properties>
     </rule>
