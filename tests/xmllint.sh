@@ -9,18 +9,22 @@ RULESET="PSR12NeutronRuleset/ruleset.xml"
 
 set -e
 
-# Current directory should be repository root
-test -r "$RULESET"
-
 # Check dependency
 hash xmllint
 
 # Create temporary directory
-mkdir -p tmp
+mkdir -p build
+
+# Current directory should be repository root
+test -r "$RULESET"
 
 # Download XML schema definition
-wget -nv -N -P tmp/ "https://www.w3.org/2012/04/XMLSchema.xsd"
+wget -nv -N -P build/ "https://www.w3.org/2012/04/XMLSchema.xsd"
 
-xmllint --noout --schema tmp/XMLSchema.xsd vendor/squizlabs/php_codesniffer/phpcs.xsd
+# Validate PHPCS schema
+xmllint --noout --schema build/XMLSchema.xsd vendor/squizlabs/php_codesniffer/phpcs.xsd
+
+# Validate ruleset
 xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd "$RULESET"
-diff -B "$RULESET" <(XMLLINT_INDENT="    " xmllint --format "$RULESET")
+# Check ruleset XML formatting
+diff --ignore-blank-lines "$RULESET" <(XMLLINT_INDENT="    " xmllint --format "$RULESET")
