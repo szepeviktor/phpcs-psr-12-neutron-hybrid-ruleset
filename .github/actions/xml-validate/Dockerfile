@@ -1,5 +1,17 @@
+# https://hub.docker.com/_/debian
 FROM debian:bullseye-slim
 
+ENV LC_ALL C
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get upgrade \
+    && apt-get install -y wget libxml2-utils \
+    && apt-get autoremove --purge -y \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/*
+
+# https://www.w3.org/2012/04/XMLSchema.xsd
+COPY XMLSchema.xsd /tmp/XMLSchema.xsd
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
