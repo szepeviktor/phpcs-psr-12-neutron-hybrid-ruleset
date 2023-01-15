@@ -4,7 +4,7 @@ FROM debian:bullseye-slim
 ENV LC_ALL C
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get upgrade \
+RUN apt-get update \
     && apt-get install -y wget libxml2-utils \
     && apt-get autoremove --purge -y \
     && apt-get clean \
