@@ -1,0 +1,22 @@
+name: "XML"
+
+on:  # yamllint disable-line rule:truthy
+    pull_request: null
+    push:
+        branches:
+        - "master"
+
+jobs:
+    validate:
+        name: "Validate XML"
+        runs-on: "ubuntu-22.04"
+        steps:
+        -
+            name: "Check out repository"
+            uses: "actions/checkout@v3"
+        -
+            name: "Validate XML files"
+            uses: ".github/actions/xml-validate"
+            with:
+                phpcs: "vendor/squizlabs/php_codesniffer/phpcs.xsd"
+                ruleset: "PSR12NeutronRuleset/ruleset.xml"

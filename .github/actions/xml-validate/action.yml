@@ -1,0 +1,7 @@
+name: "Validate XML"
+
+description: "Validate XML files against XML schema"
+
+runs:
+    using: "docker"
+    image: "Dockerfile"
