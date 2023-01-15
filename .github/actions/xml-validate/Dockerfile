@@ -1,4 +1,4 @@
-FROM bullseye-slim
+FROM debian:bullseye-slim
 
 COPY entrypoint.sh /entrypoint.sh
 
