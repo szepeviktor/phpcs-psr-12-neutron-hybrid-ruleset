@@ -14,7 +14,7 @@
     },
     "scripts": {
         "test:cs": "phpcs --standard=PHPCSDev PSR12NeutronRuleset/",
-        "test:xml": "INPUT_RULESET=PSR12NeutronRuleset/ruleset.xml .github/actions/xml-validate/entrypoint.sh"
+        "test:xml": "INPUT_RULESET=PSR12NeutronRuleset/ruleset.xml .github/actions/phpcs-ruleset-validate/entrypoint.sh"
     },
     "require-dev": {
         "phpcsstandards/phpcsdevcs": "^1.0",
