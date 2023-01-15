@@ -16,6 +16,7 @@ for INPUT in "${!INPUT_@}"; do
         continue
     fi
 
+    set -x
     test -r "${!INPUT}"
     xmllint --noout --schema "${PHPCS_SCHEMA}" "${!INPUT}"
     # Indentation: 4 spaces
