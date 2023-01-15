@@ -1,0 +1,14 @@
+name: "Validate PHPCS rulesets"
+description: "Validate PHPCS rulesets against XML schema"
+runs:
+    using: "docker"
+    image: "Dockerfile"
+inputs:
+    xml_phpcs_schema:
+        description: "Optional PHPCS schema path"
+    xml_ruleset:
+        description: "Ruleset file path"
+    xml_ruleset2:
+        description: "Optional ruleset file path"
+    xml_ruleset3:
+        description: "Optional ruleset file path"

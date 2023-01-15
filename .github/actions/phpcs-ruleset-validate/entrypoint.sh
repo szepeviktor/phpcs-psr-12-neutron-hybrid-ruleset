@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Validate XML files.
+# Validate PHPCS rulesets.
 #
 
 set -e

@@ -7,8 +7,8 @@ on:  # yamllint disable-line rule:truthy
         - "master"
 
 jobs:
-    validate:
-        name: "Validate XML"
+    phpcs-validate:
+        name: "Validate PHPCS ruleset"
         runs-on: "ubuntu-22.04"
         steps:
         -
@@ -26,8 +26,7 @@ jobs:
                 dependency-versions: "highest"
                 composer-options: "--no-plugins --no-scripts"
         -
-            name: "Validate XML files"
-            uses: "./.github/actions/xml-validate"
+            name: "Validate ruleset"
+            uses: "./.github/actions/phpcs-ruleset-validate"
             with:
-                xml_phpcs_schema: "vendor/squizlabs/php_codesniffer/phpcs.xsd"
                 xml_ruleset: "PSR12NeutronRuleset/ruleset.xml"
