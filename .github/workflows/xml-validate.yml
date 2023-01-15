@@ -16,7 +16,7 @@ jobs:
             uses: "actions/checkout@v3"
         -
             name: "Validate XML files"
-            uses: ".github/actions/xml-validate"
+            uses: "./.github/actions/xml-validate"
             with:
                 phpcs: "vendor/squizlabs/php_codesniffer/phpcs.xsd"
                 ruleset: "PSR12NeutronRuleset/ruleset.xml"
