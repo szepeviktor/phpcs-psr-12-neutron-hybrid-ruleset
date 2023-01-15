@@ -4,7 +4,7 @@
 #
 
 for INPUT in "${!INPUT_@}"; do
-    echo "INPUT: ${INPUT}"
+    echo "INPUT: ${INPUT} = '${!INPUT}'"
 done
 
 echo "OK."

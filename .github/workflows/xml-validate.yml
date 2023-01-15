@@ -18,5 +18,5 @@ jobs:
             name: "Validate XML files"
             uses: "./.github/actions/xml-validate"
             with:
-                phpcs: "vendor/squizlabs/php_codesniffer/phpcs.xsd"
-                ruleset: "PSR12NeutronRuleset/ruleset.xml"
+                xml_phpcs_schema: "vendor/squizlabs/php_codesniffer/phpcs.xsd"
+                xml_ruleset: "PSR12NeutronRuleset/ruleset.xml"
