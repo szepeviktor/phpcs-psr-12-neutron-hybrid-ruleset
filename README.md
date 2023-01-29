@@ -7,6 +7,7 @@
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 - [PSR-12](https://www.php-fig.org/psr/psr-12/)
 - [Neutron PHP Ruleset by Automattic](https://github.com/Automattic/phpcs-neutron-ruleset)
+- [Slevomat Coding Standard](https://github.com/slevomat/coding-standard)
 
 ### Features
 
