@@ -11,8 +11,8 @@
 
 ### Features
 
-- PSR-12 Extended Coding Style as starting point
-- All [WPCS](https://github.com/WordPress/WordPress-Coding-Standards) features through Neutron
+- PSR-12 Extended Coding Style as starting point (formatting)
+- All [WPCS](https://github.com/WordPress/WordPress-Coding-Standards) features through Neutron (except formatting)
 - File permission bits
 - Strict types
 - File, class and method comments
