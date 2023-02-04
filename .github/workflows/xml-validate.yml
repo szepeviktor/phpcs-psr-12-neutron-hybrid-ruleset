@@ -27,6 +27,6 @@ jobs:
                 composer-options: "--no-plugins --no-scripts"
         -
             name: "Validate ruleset"
-            uses: "./.github/actions/phpcs-ruleset-validate"
+            uses: "actions/validate-phpcs-rulesets"
             with:
                 xml_ruleset: "PSR12NeutronRuleset/ruleset.xml"
