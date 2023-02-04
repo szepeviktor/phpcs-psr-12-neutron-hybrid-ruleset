@@ -7,6 +7,7 @@ set -e
 
 PHPCS_SCHEMA="${INPUT_XML_PHPCS_SCHEMA:-vendor/squizlabs/php_codesniffer/phpcs.xsd}"
 XMLLINT_INDENT="${INPUT_XMLLINT_INDENT:-    }"
+export XMLLINT_INDENT
 
 echo "I----------------------"
 echo -n "$INPUT_XMLLINT_INDENT"| hexdump -C
