@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND="noninteractive"
 
 RUN set -x \
     && apt-get update \
-    && apt-get install -y wget libxml2-utils \
+    && apt-get install -y wget libxml2-utils bsdmainutils \
     && apt-get autoremove --purge -y \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
