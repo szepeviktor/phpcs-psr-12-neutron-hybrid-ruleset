@@ -239,5 +239,5 @@
 	<rule ref="PSR12NeutronRuleset.Strings.ConcatenationUsage">
 		<severity>5</severity>
 		<type>warning</type>
-    </rule>
+	</rule>
 </ruleset>
