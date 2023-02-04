@@ -20,7 +20,6 @@ jobs:
         apt:
           - "libxml2-utils"
       script:
-        - "sudo wget -P /usr/local/share/xml https://www.w3.org/2012/04/XMLSchema.xsd"
         - "composer run test:xml"
 
 cache:
