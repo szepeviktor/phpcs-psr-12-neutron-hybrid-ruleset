@@ -14,7 +14,7 @@
     },
     "scripts": {
         "test:cs": "phpcs --standard=PHPCSDev PSR12NeutronRuleset/",
-        "test:xml": "tests/xmllint.sh"
+        "test:xml": "xmllint --noout --schema 'vendor/squizlabs/php_codesniffer/phpcs.xsd' 'PSR12NeutronRuleset/ruleset.xml'"
     },
     "require-dev": {
         "phpcsstandards/phpcsdevcs": "^1.0",
