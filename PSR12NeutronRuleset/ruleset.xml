@@ -1,243 +1,243 @@
 <?xml version="1.0"?>
 <ruleset name="PSR12NeutronRuleset">
-    <description>PSR-12 and Neutron hybrid Ruleset.</description>
+	<description>PSR-12 and Neutron hybrid Ruleset.</description>
 
-    <rule ref="PSR12"/>
+	<rule ref="PSR12"/>
 
-    <!-- Bad parts of PHP -->
-    <rule ref="Generic.PHP.NoSilencedErrors"/>
-    <rule ref="Squiz.PHP.DiscouragedFunctions">
-        <properties>
-            <!--
-            * env() is for frameworks only
-            * ini_set() - PHP environment belongs to the server
-            * compact(), list() and extract() convert array<->value
-            * eval() is dangerous!
-            * echo, print and print_r() disturb templating
-            * var_dump() is a debugger function
-            * error_log() has special use
-            * define() is for global constants
-            -->
-            <property name="forbiddenFunctions" type="array">
-                <element key="goto" value="null"/>
-                <element key="env" value="null"/>
-                <element key="ini_set" value="null"/>
-                <element key="compact" value="null"/>
-                <element key="list" value="null"/>
-                <element key="extract" value="null"/>
-                <element key="eval" value="null"/>
-                <element key="echo" value="null"/>
-                <element key="print" value="null"/>
-                <element key="print_r" value="null"/>
-                <element key="var_dump" value="null"/>
-                <element key="error_log" value="null"/>
-                <element key="define" value="null"/>
-            </property>
-        </properties>
-    </rule>
+	<!-- Bad parts of PHP -->
+	<rule ref="Generic.PHP.NoSilencedErrors"/>
+	<rule ref="Squiz.PHP.DiscouragedFunctions">
+		<properties>
+			<!--
+			* env() is for frameworks only
+			* ini_set() - PHP environment belongs to the server
+			* compact(), list() and extract() convert array<->value
+			* eval() is dangerous!
+			* echo, print and print_r() disturb templating
+			* var_dump() is a debugger function
+			* error_log() has special use
+			* define() is for global constants
+			-->
+			<property name="forbiddenFunctions" type="array">
+				<element key="goto" value="null"/>
+				<element key="env" value="null"/>
+				<element key="ini_set" value="null"/>
+				<element key="compact" value="null"/>
+				<element key="list" value="null"/>
+				<element key="extract" value="null"/>
+				<element key="eval" value="null"/>
+				<element key="echo" value="null"/>
+				<element key="print" value="null"/>
+				<element key="print_r" value="null"/>
+				<element key="var_dump" value="null"/>
+				<element key="error_log" value="null"/>
+				<element key="define" value="null"/>
+			</property>
+		</properties>
+	</rule>
 
-    <!-- File rules -->
-    <rule ref="Generic.Files.ExecutableFile"/>
-    <rule ref="Generic.Files.OneObjectStructurePerFile"/>
-    <rule ref="Squiz.Classes.ClassFileName"/>
-    <rule ref="PEAR.Commenting.FileComment">
-        <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
-        <exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
-        <exclude name="PEAR.Commenting.FileComment.MissingVersion"/>
-    </rule>
+	<!-- File rules -->
+	<rule ref="Generic.Files.ExecutableFile"/>
+	<rule ref="Generic.Files.OneObjectStructurePerFile"/>
+	<rule ref="Squiz.Classes.ClassFileName"/>
+	<rule ref="PEAR.Commenting.FileComment">
+		<exclude name="PEAR.Commenting.FileComment.MissingCategoryTag"/>
+		<exclude name="PEAR.Commenting.FileComment.MissingPackageTag"/>
+		<exclude name="PEAR.Commenting.FileComment.MissingVersion"/>
+	</rule>
 
-    <!-- Namespace rule -->
-    <!-- PSR1.Classes.ClassDeclaration.MissingNamespace -->
+	<!-- Namespace rule -->
+	<!-- PSR1.Classes.ClassDeclaration.MissingNamespace -->
 
-    <!-- Class and method rules -->
-    <rule ref="PEAR.Commenting.ClassComment">
-        <exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag"/>
-        <exclude name="PEAR.Commenting.ClassComment.MissingPackageTag"/>
-        <exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag"/>
-        <exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag"/>
-        <exclude name="PEAR.Commenting.ClassComment.MissingLinkTag"/>
-    </rule>
+	<!-- Class and method rules -->
+	<rule ref="PEAR.Commenting.ClassComment">
+		<exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag"/>
+		<exclude name="PEAR.Commenting.ClassComment.MissingPackageTag"/>
+		<exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag"/>
+		<exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag"/>
+		<exclude name="PEAR.Commenting.ClassComment.MissingLinkTag"/>
+	</rule>
 
-    <!-- Use camelCase -->
-    <rule ref="Squiz.NamingConventions.ValidFunctionName">
-        <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
-    </rule>
-    <rule ref="Squiz.NamingConventions.ValidVariableName">
-        <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
-    </rule>
+	<!-- Use camelCase -->
+	<rule ref="Squiz.NamingConventions.ValidFunctionName">
+		<exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+	</rule>
+	<rule ref="Squiz.NamingConventions.ValidVariableName">
+		<exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+	</rule>
 
-    <!-- Array declaration rules -->
-    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+	<!-- Array declaration rules -->
+	<rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
 
-    <!-- TODO
-    <rule ref="severity:0 instead of exclude??">
-        <severity>0</severity>
-        <type>warning</type>
-    </rule>
-    -->
+	<!-- TODO
+	<rule ref="severity:0 instead of exclude??">
+		<severity>0</severity>
+		<type>warning</type>
+	</rule>
+	-->
 
-    <rule ref="NeutronRuleset">
-        <exclude name="Generic.Classes.OpeningBraceSameLine"/>
-        <exclude name="Generic.Formatting.SpaceAfterCast"/>
-        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
-        <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing"/>
-        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
-        <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket"/>
-        <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket"/>
-        <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
+	<rule ref="NeutronRuleset">
+		<exclude name="Generic.Classes.OpeningBraceSameLine"/>
+		<exclude name="Generic.Formatting.SpaceAfterCast"/>
+		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+		<exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing"/>
+		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
+		<exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket"/>
+		<exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket"/>
+		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
 
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing"/>
-        <exclude name="WordPress.Arrays.ArrayIndentation"/>
-        <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions"/>
-        <exclude name="WordPress.WhiteSpace.CastStructureSpacing"/>
-        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
-        <exclude name="WordPress.WhiteSpace.DisallowInlineTabs"/>
-        <exclude name="WordPress.WhiteSpace.OperatorSpacing"/>
-        <exclude name="WordPress.WhiteSpace.PrecisionAlignment"/>
-        <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
-        <exclude name="WordPress.NamingConventions.ValidVariableName"/>
-        <!-- Prefer Generic.PHP.NoSilencedErrors -->
-        <exclude name="WordPress.PHP.NoSilencedErrors"/>
+		<exclude name="WordPress.Arrays.ArrayDeclarationSpacing"/>
+		<exclude name="WordPress.Arrays.ArrayIndentation"/>
+		<exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions"/>
+		<exclude name="WordPress.WhiteSpace.CastStructureSpacing"/>
+		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
+		<exclude name="WordPress.WhiteSpace.DisallowInlineTabs"/>
+		<exclude name="WordPress.WhiteSpace.OperatorSpacing"/>
+		<exclude name="WordPress.WhiteSpace.PrecisionAlignment"/>
+		<exclude name="WordPress.NamingConventions.ValidFunctionName"/>
+		<exclude name="WordPress.NamingConventions.ValidVariableName"/>
+		<!-- Prefer Generic.PHP.NoSilencedErrors -->
+		<exclude name="WordPress.PHP.NoSilencedErrors"/>
 
-        <exclude name="Squiz.Operators.IncrementDecrementUsage"/>
+		<exclude name="Squiz.Operators.IncrementDecrementUsage"/>
 
-        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing"/>
-        <exclude name="NeutronStandard.Constants.DisallowDefine"/>
-        <exclude name="NeutronStandard.StrictTypes.RequireStrictTypes"/>
+		<exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing"/>
+		<exclude name="NeutronStandard.Constants.DisallowDefine"/>
+		<exclude name="NeutronStandard.StrictTypes.RequireStrictTypes"/>
 
-        <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
+		<exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
 
-        <!-- https://github.com/sirbrillig/phpcs-import-detection/issues/45 -->
-        <exclude name="ImportDetection.Imports.RequireImports"/>
-    </rule>
-    <!-- WordPress-Core opposite rules -->
-    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
-    <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
-    <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
-    <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing">
-        <properties>
-            <property name="spacing" value="0"/>
-        </properties>
-    </rule>
-    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
-        <properties>
-            <property name="equalsSpacing" value="1"/>
-            <property name="requiredSpacesAfterOpen" value="0"/>
-            <property name="requiredSpacesBeforeClose" value="0"/>
-        </properties>
-    </rule>
+		<!-- https://github.com/sirbrillig/phpcs-import-detection/issues/45 -->
+		<exclude name="ImportDetection.Imports.RequireImports"/>
+	</rule>
+	<!-- WordPress-Core opposite rules -->
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+	<rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
+	<rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+	<rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing">
+		<properties>
+			<property name="spacing" value="0"/>
+		</properties>
+	</rule>
+	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+		<properties>
+			<property name="equalsSpacing" value="1"/>
+			<property name="requiredSpacesAfterOpen" value="0"/>
+			<property name="requiredSpacesBeforeClose" value="0"/>
+		</properties>
+	</rule>
 
-    <rule ref="WordPress-Docs"/>
+	<rule ref="WordPress-Docs"/>
 
-    <rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-Extra"/>
 
-    <!-- TODO
-    Look&See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
-    -->
+	<!-- TODO
+	Look&See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
+	-->
 
-    <!-- Strict typing -->
-    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
-        <properties>
-            <property name="newlinesCountBetweenOpenTagAndDeclare" value="2"/>
-            <property name="newlinesCountAfterDeclare" value="2"/>
-            <property name="spacesCountAroundEqualsSign" value="0"/>
-        </properties>
-    </rule>
-    <!-- Namespace -->
-    <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration"/>
-    <!-- Functional -->
-    <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
-        <properties>
-            <!-- Support PHP 7.2 -->
-            <property name="enableNativeTypeHint" value="false"/>
-        </properties>
-    </rule>
-    <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
-    <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
-    <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants"/>
-    <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEmpty"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
-    <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
-    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
-    <rule ref="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators"/>
-    <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
-    <rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
-    <!-- Cleaning -->
-    <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
-    <rule ref="SlevomatCodingStandard.Functions.UnusedParameter"/>
-    <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
-    <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion"/>
-    <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc"/>
-    <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
-    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
-    <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
-    <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
-    <rule ref="SlevomatCodingStandard.Variables.UselessVariable"/>
-    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
-    <!-- Formatting -->
-    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
-    <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
-    <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.NewWithParentheses"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
-    <rule ref="SlevomatCodingStandard.Functions.DisallowArrowFunction"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
-    <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
-    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
-    <!-- It is not possible to enforce FQCN-s any more -->
-    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
-        <properties>
-            <property name="allowFullyQualifiedExceptions" value="true"/>
-            <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
-            <property name="namespacesRequiredToUse" type="array"/>
-        </properties>
-    </rule>
-    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation">
-        <properties>
-            <property name="forbiddenAnnotations" type="array">
-                <element value="@package"/>
-                <element value="@copyright"/>
-            </property>
-        </properties>
-    </rule>
-    <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
-    <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
-    <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
-    <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
+	<!-- Strict typing -->
+	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+		<properties>
+			<property name="newlinesCountBetweenOpenTagAndDeclare" value="2"/>
+			<property name="newlinesCountAfterDeclare" value="2"/>
+			<property name="spacesCountAroundEqualsSign" value="0"/>
+		</properties>
+	</rule>
+	<!-- Namespace -->
+	<rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration"/>
+	<!-- Functional -->
+	<rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
+	<rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
+		<properties>
+			<!-- Support PHP 7.2 -->
+			<property name="enableNativeTypeHint" value="false"/>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
+	<rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
+	<rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants"/>
+	<rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.DisallowEmpty"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
+	<rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
+	<rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
+	<rule ref="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators"/>
+	<rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
+	<rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
+	<!-- Cleaning -->
+	<rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
+	<rule ref="SlevomatCodingStandard.Functions.UnusedParameter"/>
+	<rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+	<rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion"/>
+	<rule ref="SlevomatCodingStandard.PHP.RequireNowdoc"/>
+	<rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
+	<rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
+	<rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
+	<rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
+	<rule ref="SlevomatCodingStandard.Variables.UselessVariable"/>
+	<rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
+	<!-- Formatting -->
+	<rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
+	<rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.NewWithParentheses"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
+	<rule ref="SlevomatCodingStandard.Functions.DisallowArrowFunction"/>
+	<rule ref="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax"/>
+	<rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
+	<rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
+	<rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
+	<rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
+	<rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
+	<rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
+	<!-- It is not possible to enforce FQCN-s any more -->
+	<rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+		<properties>
+			<property name="allowFullyQualifiedExceptions" value="true"/>
+			<property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
+			<property name="namespacesRequiredToUse" type="array"/>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
+	<rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation">
+		<properties>
+			<property name="forbiddenAnnotations" type="array">
+				<element value="@package"/>
+				<element value="@copyright"/>
+			</property>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
+	<rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
+	<rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
+	<rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"/>
+	<rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator"/>
 
-    <rule ref="Generic.Metrics.CyclomaticComplexity">
-        <severity>0</severity>
-        <type>warning</type>
-    </rule>
+	<rule ref="Generic.Metrics.CyclomaticComplexity">
+		<severity>0</severity>
+		<type>warning</type>
+	</rule>
 
-    <!-- Own rules -->
-    <rule ref="PSR12NeutronRuleset.Strings.ConcatenationUsage">
-        <severity>5</severity>
-        <type>warning</type>
+	<!-- Own rules -->
+	<rule ref="PSR12NeutronRuleset.Strings.ConcatenationUsage">
+		<severity>5</severity>
+		<type>warning</type>
     </rule>
 </ruleset>
