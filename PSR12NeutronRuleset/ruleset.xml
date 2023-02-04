@@ -19,6 +19,7 @@
             * define() is for global constants
             -->
             <property name="forbiddenFunctions" type="array">
+                <element key="goto" value="null"/>
                 <element key="env" value="null"/>
                 <element key="ini_set" value="null"/>
                 <element key="compact" value="null"/>
@@ -203,18 +204,17 @@
     <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
     <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameAfterKeyword">
+    <!-- It is not possible to enforce FQCN-s any more -->
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
         <properties>
-            <property name="keywordsToCheck" type="array">
-                <element value="T_EXTENDS"/>
-                <element value="T_IMPLEMENTS"/>
-            </property>
+            <property name="allowFullyQualifiedExceptions" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
+            <property name="namespacesRequiredToUse" type="array"/>
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions"/>
     <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation"/>
     <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation">
         <properties>
             <property name="forbiddenAnnotations" type="array">
@@ -237,7 +237,7 @@
 
     <!-- Own rules -->
     <rule ref="PSR12NeutronRuleset.Strings.ConcatenationUsage">
-        <severity>0</severity>
+        <severity>5</severity>
         <type>warning</type>
     </rule>
 </ruleset>
