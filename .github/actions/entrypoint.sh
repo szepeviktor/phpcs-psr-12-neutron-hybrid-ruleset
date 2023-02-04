@@ -8,7 +8,10 @@ set -e
 PHPCS_SCHEMA="${INPUT_XML_PHPCS_SCHEMA:-vendor/squizlabs/php_codesniffer/phpcs.xsd}"
 XMLLINT_INDENT="${INPUT_XMLLINT_INDENT:-    }"
 
-echo -n "$XMLLINT_INDENT"|hd
+echo "I----------------------"
+echo -n "$INPUT_XMLLINT_INDENT"| hexdump -C
+echo "=----------------------"
+echo -n "$XMLLINT_INDENT"| hexdump -C
 
 if [ -z "${!INPUT_*}" ]; then
     echo "No ruleset files specified!"
