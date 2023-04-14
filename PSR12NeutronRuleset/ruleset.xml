@@ -235,9 +235,50 @@
         <type>warning</type>
     </rule>
 
-    <!-- Own rules -->
+    <!-- Custom rules -->
     <rule ref="PSR12NeutronRuleset.Strings.ConcatenationUsage">
         <severity>5</severity>
         <type>warning</type>
+    </rule>
+    <!-- https://github.com/szepeviktor/uninformative-words -->
+    <rule ref="PSR12NeutronRuleset.NamingConventions.MeaningfulVariableName">
+        <properties>
+            <property name="forbiddenNames" type="array">
+                <element key="arr" value="Provide more context"/>
+                <element key="bool" value="Provide more context"/>
+                <element key="boolean" value="Provide more context"/>
+                <element key="cnt" value="Provide more context"/>
+                <element key="col" value="Provide more context"/>
+                <element key="coll" value="Provide more context"/>
+                <element key="custom" value="Provide more context"/>
+                <element key="detail" value="Provide more context"/>
+                <element key="data" value="Provide more context"/>
+                <element key="double" value="Provide more context"/>
+                <element key="elem" value="Provide more context"/>
+                <element key="err" value="Provide more context"/>
+                <element key="extra" value="Provide more context"/>
+                <element key="float" value="Provide more context"/>
+                <element key="impl" value="Provide more context"/>
+                <element key="ind" value="Provide more context"/>
+                <element key="info" value="Provide more context"/>
+                <element key="int" value="Provide more context"/>
+                <element key="integer" value="Provide more context"/>
+                <element key="item" value="Provide more context"/>
+                <element key="iter" value="Provide more context"/>
+                <element key="key" value="Provide more context"/>
+                <element key="len" value="Provide more context"/>
+                <element key="more" value="Provide more context"/>
+                <element key="other" value="Provide more context"/>
+                <element key="proc" value="Provide more context"/>
+                <element key="req" value="Provide more context"/>
+                <element key="res" value="Provide more context"/>
+                <element key="ret" value="Provide more context"/>
+                <element key="return" value="Provide more context"/>
+                <element key="str" value="Provide more context"/>
+                <element key="value" value="Provide more context"/>
+                <element key="var" value="Provide more context"/>
+                <element key="vdata" value="Provide more context"/>
+            </property>
+        </properties>
     </rule>
 </ruleset>

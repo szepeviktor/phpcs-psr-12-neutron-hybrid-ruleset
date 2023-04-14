@@ -6,6 +6,8 @@
  * @package PSR12NeutronRuleset
  */
 
+declare(strict_types=1);
+
 namespace PSR12NeutronRuleset\Sniffs\Strings;
 
 use PHP_CodeSniffer\Files\File;
@@ -30,8 +32,8 @@ class ConcatenationUsageSniff implements Sniff
     /**
      * Process sniff.
      *
-     * @param \PHP_CodeSniffer\Files\File $phpcsFile 1
-     * @param int                         $stackPtr  2
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile File name.
+     * @param int                         $stackPtr  Stack pointer.
      *
      * @return void
      */
