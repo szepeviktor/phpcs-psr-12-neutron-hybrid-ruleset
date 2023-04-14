@@ -35,14 +35,14 @@ jobs:
 
 cache:
     directories:
-        - "${HOME}/.composer/cache"
+    - "${HOME}/.composer/cache"
 
 before_install:
-    - "phpenv config-rm xdebug.ini"
-    - "composer validate --strict"
+- "phpenv config-rm xdebug.ini"
+- "composer validate --strict"
 
 install:
-    - "composer update --no-interaction"
+- "composer update --no-interaction"
 
 script:
-    - "composer run test:cs"
+- "composer run test:cs"
