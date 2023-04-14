@@ -15,6 +15,10 @@ php:
 jobs:
   include:
     - dist: "jammy"
+      addons:
+        apt:
+          packages:
+            - "libonig5"
       php: "8.2"
     - name: "Validate ruleset XML file"
       php: "7.4"
