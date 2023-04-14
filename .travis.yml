@@ -6,7 +6,6 @@ os:
 dist: "bionic"
 
 php:
-  - "8.2"
   - "8.1"
   - "8.0"
   - "7.4"
@@ -15,6 +14,8 @@ php:
 
 jobs:
   include:
+    - dist: "jammy"
+      php: "8.2"
     - name: "Validate ruleset XML file"
       php: "7.4"
       addons:
