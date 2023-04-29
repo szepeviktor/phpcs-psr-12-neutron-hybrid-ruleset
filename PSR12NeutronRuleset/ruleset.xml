@@ -8,30 +8,55 @@
     <rule ref="Generic.PHP.NoSilencedErrors"/>
     <rule ref="Squiz.PHP.DiscouragedFunctions">
         <properties>
-            <!--
-            * env() is for frameworks only
-            * ini_set() - PHP environment belongs to the server
-            * compact(), list() and extract() convert array<->value
-            * eval() is dangerous!
-            * echo, print and print_r() disturb templating
-            * var_dump() is a debugger function
-            * error_log() has special use
-            * define() is for global constants
-            -->
             <property name="forbiddenFunctions" type="array">
-                <element key="goto" value="null"/>
-                <element key="env" value="null"/>
-                <element key="ini_set" value="null"/>
+                <!-- See disable_functions PHP-FPM configuration -->
+                <!-- https://github.com/szepeviktor/debian-server-tools/blob/master/webserver/phpfpm-pools/Skeleton-pool.conf#L23 -->
+                <!-- PHP built-in global functions -->
                 <element key="compact" value="null"/>
-                <element key="list" value="null"/>
-                <element key="extract" value="null"/>
-                <element key="eval" value="null"/>
-                <element key="echo" value="null"/>
-                <element key="print" value="null"/>
-                <element key="print_r" value="null"/>
-                <element key="var_dump" value="null"/>
-                <element key="error_log" value="null"/>
+                <element key="create_function" value="null"/>
                 <element key="define" value="null"/>
+                <element key="die" value="null"/>
+                <element key="echo" value="null"/>
+                <element key="env" value="null"/>
+                <element key="error_log" value="null"/>
+                <element key="eval" value="null"/>
+                <element key="exit" value="null"/>
+                <element key="extract" value="null"/>
+                <element key="goto" value="null"/>
+                <element key="ini_set" value="null"/>
+                <element key="list" value="null"/>
+                <element key="phpinfo" value="null"/>
+                <element key="print_r" value="null"/>
+                <element key="print" value="null"/>
+                <element key="var_dump" value="null"/>
+                <!-- Type checking and converting function -->
+                <element key="boolval" value="(bool)"/>
+                <element key="doubleval" value="(float)"/>
+                <element key="doubleval" value="floatval"/>
+                <element key="floatval" value="(float)"/>
+                <element key="intval" value="(int)"/>
+                <element key="is_double" value="is_float"/>
+                <element key="is_integer" value="is_int"/>
+                <element key="is_long" value="is_int"/>
+                <element key="is_null" value="null"/>
+                <element key="is_real" value="is_float"/>
+                <element key="strval" value="(string)"/>
+                <!-- Old functions -->
+                <element key="array_push" value="null"/>
+                <element key="chop" value="rtrim"/>
+                <element key="close" value="closedir"/>
+                <element key="delete" value="unset"/>
+                <element key="fputs" value="fwrite"/>
+                <element key="ini_alter" value="ini_alter"/>
+                <element key="is_writeable" value="is_writable"/>
+                <element key="join" value="implode"/>
+                <element key="key_exists" value="array_key_exists"/>
+                <element key="mt_rand" value="random_int"/>
+                <element key="pos" value="current"/>
+                <element key="rand" value="random_int"/>
+                <element key="show_source" value="highlight_file"/>
+                <element key="sizeof" value="count"/>
+                <element key="strchr" value="strstr"/>
             </property>
         </properties>
     </rule>
@@ -132,7 +157,7 @@
     <rule ref="WordPress-Extra"/>
 
     <!-- TODO
-    Look&See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
+    Look-and-See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
     -->
 
     <!-- Strict typing -->
