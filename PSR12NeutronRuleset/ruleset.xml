@@ -94,6 +94,9 @@
     <!-- Array declaration rules -->
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
 
+    <!-- Logical operators -->
+    <rule ref="Generic.Formatting.SpaceAfterNot"/>
+
     <!-- TODO
     <rule ref="severity:0 instead of exclude??">
         <severity>0</severity>
