@@ -11,7 +11,8 @@
             <property name="forbiddenFunctions" type="array">
                 <!-- See disable_functions PHP-FPM configuration -->
                 <!-- https://github.com/szepeviktor/debian-server-tools/blob/master/webserver/phpfpm-pools/Skeleton-pool.conf#L23 -->
-                <!-- PHP built-in global functions -->
+                <!-- PHP built-in functions -->
+                <element key="array_push" value="null"/>
                 <element key="compact" value="null"/>
                 <element key="create_function" value="null"/>
                 <element key="define" value="null"/>
@@ -27,6 +28,7 @@
                 <element key="phpinfo" value="null"/>
                 <element key="print_r" value="null"/>
                 <element key="print" value="null"/>
+                <element key="settype" value="null"/>
                 <element key="var_dump" value="null"/>
                 <!-- Symfony helpers -->
                 <element key="dd" value="null"/>
@@ -46,7 +48,6 @@
                 <element key="is_real" value="is_float"/>
                 <element key="strval" value="(string)"/>
                 <!-- Legacy function names -->
-                <element key="array_push" value="null"/>
                 <element key="chop" value="rtrim"/>
                 <element key="close" value="closedir"/>
                 <element key="delete" value="unset"/>
@@ -58,7 +59,6 @@
                 <element key="mt_rand" value="random_int"/>
                 <element key="pos" value="current"/>
                 <element key="rand" value="random_int"/>
-                <element key="settype" value="null"/>
                 <element key="show_source" value="highlight_file"/>
                 <element key="sizeof" value="count"/>
                 <element key="strchr" value="strstr"/>
