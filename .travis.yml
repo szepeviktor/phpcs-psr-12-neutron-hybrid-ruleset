@@ -46,3 +46,4 @@ install:
 
 script:
 - "composer run test:cs"
+- "composer run test:e2e"
