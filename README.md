@@ -1,8 +1,8 @@
 # Hybrid PHPCS ruleset for OOP WordPress development
 
 [![Build Status](https://travis-ci.com/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset.svg?branch=master)](https://travis-ci.com/github/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset)
-[![Packagist Version](https://img.shields.io/packagist/v/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset)](https://packagist.org/packages/php-stubs/woocommerce-stubs)
-[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset)](https://packagist.org/packages/php-stubs/woocommerce-stubs)
+[![Packagist Version](https://img.shields.io/packagist/v/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset)](https://packagist.org/packages/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset)](https://packagist.org/packages/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset)
 
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 - [PSR-12](https://www.php-fig.org/psr/psr-12/)
