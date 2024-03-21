@@ -26,7 +26,7 @@ final class MeaningfulVariableNameSniff extends AbstractVariableSniff
      *
      * @var array<string, string>
      */
-    public array $forbiddenNames = [];
+    public $forbiddenNames = [];
 
     /**
      * Processes this test, when one of its tokens is encountered.
