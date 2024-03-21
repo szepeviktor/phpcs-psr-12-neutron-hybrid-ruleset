@@ -18,7 +18,7 @@ jobs:
     -
         php: "8.1"
         script:
-        - "composer run test:e2e"
+        - "composer run test:cs"
     -
         dist: "jammy"
         addons:
@@ -27,7 +27,7 @@ jobs:
                 - "libonig5"
         php: "8.2"
         script:
-        - "composer run test:e2e"
+        - "composer run test:cs"
     -
         name: "Validate ruleset XML file"
         addons:
