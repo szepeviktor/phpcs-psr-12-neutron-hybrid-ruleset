@@ -312,6 +312,15 @@
                 <element key="value" value="Provide more context"/>
                 <element key="var" value="Provide more context"/>
                 <element key="vdata" value="Provide more context"/>
+                <element key="GLOBALS" value="Do not use superglobals"/>
+                <element key="_SERVER" value="Do not use superglobals"/>
+                <element key="_GET" value="Do not use superglobals"/>
+                <element key="_POST" value="Do not use superglobals"/>
+                <element key="_FILES" value="Do not use superglobals"/>
+                <element key="_COOKIE" value="Do not use superglobals"/>
+                <element key="_SESSION" value="Do not use superglobals"/>
+                <element key="_REQUEST" value="Do not use superglobals"/>
+                <element key="_ENV" value="Do not use superglobals"/>
             </property>
         </properties>
     </rule>
