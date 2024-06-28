@@ -109,7 +109,7 @@
     </rule>
     -->
 
-    <rule ref="NeutronRuleset">
+    <rule ref="./NeutronRuleset.xml">
         <exclude name="Generic.Classes.OpeningBraceSameLine"/>
         <exclude name="Generic.Formatting.SpaceAfterCast"/>
         <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
@@ -144,6 +144,9 @@
 
         <!-- https://github.com/sirbrillig/phpcs-import-detection/issues/45 -->
         <exclude name="ImportDetection.Imports.RequireImports"/>
+
+        <!-- Old Neutron -->
+        <exclude name="WordPress.PHP.StrictComparisons.LooseComparison"/>
     </rule>
     <!-- WordPress-Core opposite rules -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
