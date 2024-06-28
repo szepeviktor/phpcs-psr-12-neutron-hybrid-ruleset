@@ -144,9 +144,6 @@
 
         <!-- https://github.com/sirbrillig/phpcs-import-detection/issues/45 -->
         <exclude name="ImportDetection.Imports.RequireImports"/>
-
-        <!-- Old Neutron -->
-        <exclude name="WordPress.PHP.StrictComparisons.LooseComparison"/>
     </rule>
     <!-- WordPress-Core opposite rules -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
