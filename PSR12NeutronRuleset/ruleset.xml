@@ -139,10 +139,8 @@
         <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing"/>
         <exclude name="NeutronStandard.Constants.DisallowDefine"/>
         <exclude name="NeutronStandard.StrictTypes.RequireStrictTypes"/>
-
         <!-- Covered by forbidden functions rule -->
         <exclude name="NeutronStandard.Extract.DisallowExtract"/>
-        <exclude name="Wordpress.PHP.DontExtract"/>
 
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
 
@@ -168,7 +166,9 @@
 
     <rule ref="WordPress-Docs"/>
 
-    <rule ref="WordPress-Extra"/>
+    <rule ref="WordPress-Extra">
+        <exclude name="Wordpress.PHP.DontExtract"/>
+    </rule>
 
     <!-- TODO
     Look-and-See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
