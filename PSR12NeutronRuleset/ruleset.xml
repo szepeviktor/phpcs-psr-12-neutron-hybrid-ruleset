@@ -140,6 +140,10 @@
         <exclude name="NeutronStandard.Constants.DisallowDefine"/>
         <exclude name="NeutronStandard.StrictTypes.RequireStrictTypes"/>
 
+        <!-- Covered by forbidden functions rule -->
+        <exclude name="NeutronStandard.Extract.DisallowExtract"/>
+        <exclude name="Wordpress.PHP.DontExtract"/>
+
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
 
         <!-- https://github.com/sirbrillig/phpcs-import-detection/issues/45 -->
