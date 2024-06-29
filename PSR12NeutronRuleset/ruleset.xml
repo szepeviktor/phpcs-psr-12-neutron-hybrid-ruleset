@@ -6,7 +6,7 @@
 
     <!-- Bad parts of PHP -->
     <rule ref="Generic.PHP.NoSilencedErrors"/>
-    <rule ref="Squiz.PHP.DiscouragedFunctions">
+    <rule ref="Generic.PHP.ForbiddenFunctions">
         <properties>
             <property name="forbiddenFunctions" type="array">
                 <!-- See disable_functions PHP-FPM configuration -->
