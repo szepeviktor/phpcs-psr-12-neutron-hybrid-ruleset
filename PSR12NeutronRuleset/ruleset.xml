@@ -166,7 +166,7 @@
 
     <rule ref="WordPress-Docs"/>
 
-    <rule ref="WordPress-Extra">
+    <rule ref="WordPress-Core">
         <exclude name="Wordpress.PHP.DontExtract"/>
     </rule>
 
