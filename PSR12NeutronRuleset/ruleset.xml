@@ -145,9 +145,6 @@
         <exclude name="WordPress.PHP.DontExtract"/>
 
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
-
-        <!-- https://github.com/sirbrillig/phpcs-import-detection/issues/45 -->
-        <exclude name="ImportDetection.Imports.RequireImports"/>
     </rule>
     <!-- WordPress-Core opposite rules -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>

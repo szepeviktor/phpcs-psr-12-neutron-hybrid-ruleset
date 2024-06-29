@@ -3,17 +3,9 @@
     <description>Neutron Ruleset.</description>
     <rule ref="VariableAnalysis"/>
     <rule ref="NeutronStandard"/>
-    <rule ref="ImportDetection"/>
     <rule ref="WordPress-Core"/>
     <rule ref="Squiz.Commenting">
         <severity>0</severity>
-    </rule>
-    <rule ref="ImportDetection.Imports.RequireImports">
-        <properties>
-            <property name="ignoreUnimportedSymbols" value="/^(BD_PROCESSOR_[A-Z_]+|BD_STRIPE_[A-Z_]+|BD_PAYPAL_[A-Z_]+|BD_TXN[A-Z_]+|BD_TYPE[A-Z_]+|BILLINGDADDY_HOME|require_lib|WPCOM_[A-Z_]+|tracks_record_event|BD_INTERVAL_[A-Z_]+)$/"/>
-            <property name="ignoreGlobalsWhenInGlobalScope" value="true"/>
-            <property name="ignoreWordPressSymbols" value="true"/>
-        </properties>
     </rule>
     <rule ref="PEAR.Functions.FunctionCallSignature.MultipleArguments">
         <severity>0</severity>
@@ -56,9 +48,6 @@
     </rule>
     <rule ref="WordPress.DB.DirectDatabaseQuery.NoCaching">
         <severity>0</severity>
-    </rule>
-    <rule ref="ImportDetection.Imports.RequireImports.Import">
-        <type>error</type>
     </rule>
     <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable">
         <type>error</type>
