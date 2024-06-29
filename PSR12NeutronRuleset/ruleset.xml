@@ -142,7 +142,7 @@
 
         <!-- Covered by forbidden functions rule -->
         <exclude name="NeutronStandard.Extract.DisallowExtract"/>
-        <exclude name="Wordpress.PHP.DontExtract"/>
+        <exclude name="WordPress.PHP.DontExtract"/>
 
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
 
