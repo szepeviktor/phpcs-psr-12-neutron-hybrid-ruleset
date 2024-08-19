@@ -52,7 +52,7 @@
                 <element key="close" value="closedir"/>
                 <element key="delete" value="unset"/>
                 <element key="fputs" value="fwrite"/>
-                <element key="ini_alter" value="ini_alter"/>
+                <element key="ini_alter" value="ini_set"/>
                 <element key="is_writeable" value="is_writable"/>
                 <element key="join" value="implode"/>
                 <element key="key_exists" value="array_key_exists"/>
