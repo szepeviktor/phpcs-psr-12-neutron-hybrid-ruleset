@@ -247,7 +247,13 @@
             <property name="namespacesRequiredToUse" type="array"/>
         </properties>
     </rule>
-    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions">
+        <properties>
+            <property name="ignoredNames" type="array">
+                <element value="WP_Error"/>
+            </property>
+        </properties>
+    </rule>
     <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
     <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation"/>
