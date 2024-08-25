@@ -214,7 +214,6 @@
     <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion"/>
     <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc"/>
     <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
-    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
     <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
     <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
     <rule ref="SlevomatCodingStandard.Variables.UselessVariable"/>
