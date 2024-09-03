@@ -176,8 +176,9 @@
         <properties>
             <property name="linesCountBeforeDeclare" value="1"/>
             <property name="linesCountAfterDeclare" value="1"/>
-            <property name="spacesCountAroundEqualsSign" value="0"/>
         </properties>
+        <!-- Covered by PSR12.Files.DeclareStatement -->
+        <exclude name="SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectStrictTypesFormat"/>
     </rule>
     <!-- Namespace -->
     <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
