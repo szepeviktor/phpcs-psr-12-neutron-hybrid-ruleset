@@ -136,12 +136,7 @@
 
         <exclude name="Squiz.Operators.IncrementDecrementUsage"/>
 
-        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing"/>
-        <exclude name="NeutronStandard.Constants.DisallowDefine"/>
-        <exclude name="NeutronStandard.StrictTypes.RequireStrictTypes"/>
-
         <!-- Covered by forbidden functions rule -->
-        <exclude name="NeutronStandard.Extract.DisallowExtract"/>
         <exclude name="WordPress.PHP.DontExtract"/>
 
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
@@ -166,6 +161,12 @@
     <rule ref="WordPress-Docs"/>
 
     <rule ref="WordPress-Extra"/>
+
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1"/>
+        </properties>
+    </rule>
 
     <!-- TODO
     Look-and-See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
@@ -232,6 +233,14 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
     <rule ref="SlevomatCodingStandard.Functions.DisallowArrowFunction"/>
+    <rule ref="SlevomatCodingStandard.Functions.FunctionLength">
+        <properties>
+            <property name="maxLinesLength" value="40"/>
+            <property name="includeComments" value="false"/>
+            <property name="includeWhitespace" value="false"/>
+        </properties>
+        <type>warning</type>
+    </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax"/>
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
     <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>

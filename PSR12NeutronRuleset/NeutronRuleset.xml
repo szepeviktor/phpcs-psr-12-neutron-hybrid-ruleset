@@ -1,9 +1,53 @@
 <?xml version="1.0"?>
 <ruleset name="NeutronRuleset">
     <description>Neutron Ruleset.</description>
+
     <rule ref="VariableAnalysis"/>
-    <rule ref="NeutronStandard"/>
+
+    <!-- VariableAnalysis - customization -->
+    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable">
+        <type>error</type>
+    </rule>
+    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
+        <properties>
+            <property name="allowUnusedCaughtExceptions" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- NeutronStandard - full set of rules -->
+    <!-- Covered by Generic.Arrays.DisallowLongArraySyntax
+    <rule ref="NeutronStandard.Arrays.DisallowLongformArray"/> -->
+    <rule ref="NeutronStandard.AssignAlign.DisallowAssignAlign"/>
+    <rule ref="NeutronStandard.Conditions.DisallowConditionAssignWithoutConditional"/>
+    <!-- Covered by forbidden functions rule
+    <rule ref="NeutronStandard.Constants.DisallowDefine"/>
+    <rule ref="NeutronStandard.Extract.DisallowExtract"/>  -->
+    <rule ref="NeutronStandard.Functions.DisallowCallUserFunc"/>
+    <!-- Covered by SlevomatCodingStandard.Functions.FunctionLength
+    <rule ref="NeutronStandard.Functions.LongFunction"/> -->
+    <rule ref="NeutronStandard.Functions.TypeHint"/>
+    <rule ref="NeutronStandard.Functions.VariableFunctions"/>
+    <rule ref="NeutronStandard.Globals.DisallowGlobalFunctions"/>
+    <rule ref="NeutronStandard.MagicMethods.DisallowMagicGet"/>
+    <rule ref="NeutronStandard.MagicMethods.DisallowMagicSerialize"/>
+    <rule ref="NeutronStandard.MagicMethods.DisallowMagicSet"/>
+    <rule ref="NeutronStandard.MagicMethods.RiskyMagicMethod"/>
+    <!-- Covered by Slevomat
+    <rule ref="NeutronStandard.StrictTypes.RequireStrictTypes"/> -->
+    <rule ref="NeutronStandard.Whitespace.DisallowMultipleNewlines"/>
+    <!-- Covered by Squiz.WhiteSpace.FunctionSpacing
+    <rule ref="NeutronStandard.Whitespace.NewlineBetweenFunctions.MissingNewline"/> -->
+    <!-- We use a differen spacing rule
+    <rule ref="NeutronStandard.Whitespace.RequireParenthesisSpacing"/> -->
+
+    <!-- NeutronStandard - customization -->
+    <rule ref="NeutronStandard.Functions.TypeHint.NoArgumentType">
+        <severity>0</severity>
+    </rule>
+
     <rule ref="WordPress-Core"/>
+
+    <!-- WordPress-Core - customization -->
     <rule ref="Squiz.Commenting">
         <severity>0</severity>
     </rule>
@@ -40,28 +84,14 @@
     <rule ref="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterCloseParenthesis">
         <severity>0</severity>
     </rule>
-    <rule ref="NeutronStandard.StrictTypes.RequireStrictTypes.StrictTypes">
-        <type>warning</type>
-    </rule>
     <rule ref="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound">
         <type>warning</type>
     </rule>
     <rule ref="WordPress.DB.DirectDatabaseQuery.NoCaching">
         <severity>0</severity>
     </rule>
-    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable">
-        <type>error</type>
-    </rule>
-    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
-        <properties>
-            <property name="allowUnusedCaughtExceptions" value="true"/>
-        </properties>
-    </rule>
     <rule ref="WordPress.PHP.StrictInArray.MissingTrueStrict">
         <type>error</type>
-    </rule>
-    <rule ref="NeutronStandard.Functions.TypeHint.NoArgumentType">
-        <severity>0</severity>
     </rule>
     <rule ref="WordPress.DB.DirectDatabaseQuery.DirectQuery">
         <severity>0</severity>
