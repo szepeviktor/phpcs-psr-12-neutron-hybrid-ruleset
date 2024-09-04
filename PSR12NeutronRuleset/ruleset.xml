@@ -109,6 +109,19 @@
     </rule>
     -->
 
+    <rule ref="VariableAnalysis">
+        <!-- Covered by SlevomatCodingStandard.Variables.UnusedVariable -->
+        <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
+    </rule>
+    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable">
+        <type>error</type>
+    </rule>
+    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
+        <properties>
+            <property name="allowUnusedCaughtExceptions" value="true"/>
+        </properties>
+    </rule>
+
     <rule ref="./NeutronRuleset.xml">
         <exclude name="Generic.Classes.OpeningBraceSameLine"/>
         <exclude name="Generic.Formatting.SpaceAfterCast"/>

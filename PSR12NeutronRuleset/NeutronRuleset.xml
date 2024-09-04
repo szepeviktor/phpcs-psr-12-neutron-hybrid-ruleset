@@ -2,18 +2,6 @@
 <ruleset name="NeutronRuleset">
     <description>Neutron Ruleset.</description>
 
-    <rule ref="VariableAnalysis"/>
-
-    <!-- VariableAnalysis - customization -->
-    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable">
-        <type>error</type>
-    </rule>
-    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
-        <properties>
-            <property name="allowUnusedCaughtExceptions" value="true"/>
-        </properties>
-    </rule>
-
     <!-- NeutronStandard - full set of rules -->
     <!-- Covered by Generic.Arrays.DisallowLongArraySyntax
     <rule ref="NeutronStandard.Arrays.DisallowLongformArray"/> -->
