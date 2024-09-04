@@ -5,26 +5,28 @@
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
-        "squizlabs/php_codesniffer": "^3.8",
         "automattic/phpcs-neutron-ruleset": "^3.4",
+        "sirbrillig/phpcs-variable-analysis": "^2.0.1",
         "slevomat/coding-standard": "^8.0",
+        "squizlabs/php_codesniffer": "^3.8",
         "wp-coding-standards/wpcs": "3.1.0 as 2.3.0"
+    },
+    "require-dev": {
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpcsstandards/phpcsdevcs": "^1.1"
     },
     "suggest": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
     },
     "scripts": {
         "test:cs": "phpcs --standard=PHPCSDev PSR12NeutronRuleset/",
         "test:e2e": "phpcs --standard=PSR12NeutronRuleset/ruleset.xml tests/smoketest.php",
         "test:xml": "xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd PSR12NeutronRuleset/ruleset.xml"
-    },
-    "require-dev": {
-        "phpcsstandards/phpcsdevcs": "^1.0",
-        "phpcompatibility/php-compatibility": "dev-develop as 10.0.0"
-    },
-    "config": {
-        "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
     }
 }
