@@ -12,7 +12,7 @@
         "wp-coding-standards/wpcs": "3.1.0 as 2.3.0"
     },
     "require-dev": {
-        "phpcompatibility/php-compatibility": "^9.3",
+        "phpcompatibility/php-compatibility": "dev-develop as 10.0.0",
         "phpcsstandards/phpcsdevcs": "^1.1"
     },
     "suggest": {
