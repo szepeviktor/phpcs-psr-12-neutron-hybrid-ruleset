@@ -215,7 +215,7 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit">
         <properties>
-            <property name="ignoreStandaloneIfInScope" value="true">
+            <property name="ignoreStandaloneIfInScope" value="true"/>
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
