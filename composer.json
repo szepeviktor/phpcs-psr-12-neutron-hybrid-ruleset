@@ -1,8 +1,18 @@
 {
     "name": "szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset",
-    "type": "phpcodesniffer-standard",
     "description": "Hybrid PHPCS ruleset for OOP WordPress development",
+    "type": "phpcodesniffer-standard",
+    "keywords": [
+        "phpcs",
+        "wordpress",
+        "psr12",
+        "dev"
+    ],
     "license": "MIT",
+    "support": {
+		"issues": "https://github.com/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset/issues",
+		"source": "https://github.com/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset"
+	},
     "require": {
         "php": "^7.4 || ^8.0",
         "automattic/phpcs-neutron-ruleset": "^3.4",
@@ -28,5 +38,11 @@
         "test:cs": "phpcs --standard=PHPCSDev PSR12NeutronRuleset/",
         "test:e2e": "phpcs --standard=PSR12NeutronRuleset/ruleset.xml tests/smoketest.php",
         "test:xml": "xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd PSR12NeutronRuleset/ruleset.xml"
-    }
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/szepeviktor"
+        }
+    ]
 }
