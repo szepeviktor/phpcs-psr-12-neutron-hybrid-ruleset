@@ -221,7 +221,6 @@
     <rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
     <!-- Cleaning -->
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
-    <rule ref="SlevomatCodingStandard.Functions.UnusedParameter"/>
     <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
