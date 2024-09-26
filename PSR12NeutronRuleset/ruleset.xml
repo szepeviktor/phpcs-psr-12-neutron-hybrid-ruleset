@@ -181,7 +181,7 @@
         </properties>
     </rule>
 
-    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter">
         <type>error</type>
     </rule>
 
