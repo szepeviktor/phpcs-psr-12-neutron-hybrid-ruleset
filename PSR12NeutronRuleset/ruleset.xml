@@ -181,6 +181,10 @@
         </properties>
     </rule>
 
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+        <type>error</type>
+    </rule>
+
     <!-- TODO
     Look-and-See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
     -->
