@@ -25,7 +25,7 @@
     <rule ref="NeutronStandard.Whitespace.DisallowMultipleNewlines"/>
     <!-- Covered by Squiz.WhiteSpace.FunctionSpacing
     <rule ref="NeutronStandard.Whitespace.NewlineBetweenFunctions.MissingNewline"/> -->
-    <!-- We use a differen spacing rule
+    <!-- We use a different spacing rule
     <rule ref="NeutronStandard.Whitespace.RequireParenthesisSpacing"/> -->
 
     <!-- NeutronStandard - customization -->
