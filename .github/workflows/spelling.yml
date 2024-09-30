@@ -8,7 +8,7 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
     typos:
-        name: "Tpos"
+        name: "Typos"
         runs-on: "ubuntu-22.04"
         steps:
         -
