@@ -9,11 +9,11 @@ on:  # yamllint disable-line rule:truthy
 jobs:
     typos:
         name: "Typos"
-        runs-on: "ubuntu-22.04"
+        runs-on: "ubuntu-latest"
         steps:
         -
             name: "Check out repository"
-            uses: "actions/checkout@v3"
+            uses: "actions/checkout@v4"
         -
             name: "Search for misspellings"
             uses: "crate-ci/typos@master"
