@@ -9,7 +9,7 @@ on:  # yamllint disable-line rule:truthy
 jobs:
     typos:
         name: "Typos"
-        runs-on: "ubuntu-latest"
+        runs-on: "ubuntu-22.04"
         steps:
         -
             name: "Check out repository"
