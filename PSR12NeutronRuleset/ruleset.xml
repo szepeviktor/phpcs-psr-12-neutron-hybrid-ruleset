@@ -151,9 +151,12 @@
 
         <!-- Covered by forbidden functions rule -->
         <exclude name="WordPress.PHP.DontExtract"/>
+        <!-- Covered by PSR12.Files.ImportStatement.LeadingSlash -->
+        <exclude name="Universal.UseStatements.NoLeadingBackslash"/>
 
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
     </rule>
+
     <!-- WordPress-Core opposite rules -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
@@ -281,7 +284,6 @@
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
     <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation"/>
     <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
     <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
