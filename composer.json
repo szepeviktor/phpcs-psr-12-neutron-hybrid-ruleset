@@ -10,9 +10,9 @@
     ],
     "license": "MIT",
     "support": {
-		"issues": "https://github.com/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset/issues",
-		"source": "https://github.com/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset"
-	},
+        "issues": "https://github.com/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset/issues",
+        "source": "https://github.com/szepeviktor/phpcs-psr-12-neutron-hybrid-ruleset"
+    },
     "require": {
         "php": "^7.4 || ^8.0",
         "automattic/phpcs-neutron-ruleset": "^3.4",
