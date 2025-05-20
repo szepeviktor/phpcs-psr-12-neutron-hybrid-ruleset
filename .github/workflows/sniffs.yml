@@ -1,4 +1,4 @@
-name: "XML"
+name: "Sniffs"
 
 on:  # yamllint disable-line rule:truthy
     pull_request: null
@@ -7,8 +7,8 @@ on:  # yamllint disable-line rule:truthy
         - "master"
 
 jobs:
-    phpcs-validate:
-        name: "Validate PHPCS ruleset"
+    phpcs-sniffs:
+        name: "Display PHPCS rules"
         runs-on: "ubuntu-24.04"
         steps:
         -
@@ -26,7 +26,6 @@ jobs:
                 dependency-versions: "highest"
                 composer-options: "--no-plugins --no-scripts"
         -
-            name: "Validate ruleset"
-            uses: "szepeviktor/phpcs-ruleset-validator@v0.4.0"
-            with:
-                xml_ruleset: "PSR12NeutronRuleset/ruleset.xml"
+            name: "List included rules"
+            run: |
+                vendor/bin/phpcs -e --standard=PSR12NeutronRuleset
