@@ -96,4 +96,7 @@
     <rule ref="Generic.Arrays.DisallowShortArraySyntax">
         <severity>0</severity>
     </rule>
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <severity>0</severity>
+    </rule>
 </ruleset>
