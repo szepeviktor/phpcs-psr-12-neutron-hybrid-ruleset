@@ -2,7 +2,9 @@
 <ruleset name="PSR12NeutronRuleset">
     <description>PSR-12 and Neutron hybrid Ruleset.</description>
 
-    <rule ref="PSR12"/>
+    <rule ref="PSR12">
+        <exclude name="PSR12.Operators.OperatorSpacing"/>
+    </rule>
 
     <!-- Bad parts of PHP -->
     <rule ref="Generic.PHP.NoSilencedErrors"/>
