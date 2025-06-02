@@ -160,7 +160,11 @@
     <!-- WordPress-Core opposite rules -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
-    <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+        <properties>
+            <property name="spacing" value="0"/>
+        </properties>
+    </rule>
     <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing">
         <properties>
             <property name="spacing" value="0"/>
