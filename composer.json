@@ -18,8 +18,8 @@
         "automattic/phpcs-neutron-ruleset": "^3.4",
         "sirbrillig/phpcs-variable-analysis": "^2.0.1",
         "slevomat/coding-standard": "^8.0",
-        "squizlabs/php_codesniffer": "^3.8",
-        "wp-coding-standards/wpcs": "^4.0"
+        "squizlabs/php_codesniffer": "^4.0",
+        "wp-coding-standards/wpcs": "3.2.0 as 2.3.0"
     },
     "require-dev": {
         "phpcompatibility/php-compatibility": "dev-develop as 10.0.0",
