@@ -314,6 +314,7 @@
         <severity>5</severity>
         <type>warning</type>
     </rule>
+    <rule ref="PSR12NeutronRuleset.Security.SuperglobalKeys"/>
     <!-- https://github.com/szepeviktor/uninformative-words -->
     <rule ref="PSR12NeutronRuleset.NamingConventions.MeaningfulVariableName">
         <properties>
