@@ -17,6 +17,7 @@
 - Strict types
 - File, class and method comments
 - Handpicked [Slevomat](https://github.com/slevomat/coding-standard) rules
+- Superglobal key allowlisting
 
 ### Usage
 

@@ -13,7 +13,7 @@ jobs:
         steps:
         -
             name: "Check out repository"
-            uses: "actions/checkout@v4"
+            uses: "actions/checkout@v7"
         -
             name: "Search for misspellings"
-            uses: "crate-ci/typos@master"
+            uses: "crate-ci/typos@v1.49.0"
