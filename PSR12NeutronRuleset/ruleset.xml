@@ -6,7 +6,7 @@
 
     <!-- Bad parts of PHP -->
     <rule ref="Generic.PHP.NoSilencedErrors"/>
-    <rule ref="Squiz.PHP.DiscouragedFunctions">
+    <rule ref="Generic.PHP.ForbiddenFunctions">
         <properties>
             <property name="forbiddenFunctions" type="array">
                 <!-- See disable_functions PHP-FPM configuration -->
@@ -52,7 +52,7 @@
                 <element key="close" value="closedir"/>
                 <element key="delete" value="unset"/>
                 <element key="fputs" value="fwrite"/>
-                <element key="ini_alter" value="ini_alter"/>
+                <element key="ini_alter" value="ini_set"/>
                 <element key="is_writeable" value="is_writable"/>
                 <element key="join" value="implode"/>
                 <element key="key_exists" value="array_key_exists"/>
@@ -109,7 +109,20 @@
     </rule>
     -->
 
-    <rule ref="NeutronRuleset">
+    <rule ref="VariableAnalysis">
+        <!-- Covered by SlevomatCodingStandard.Variables.UnusedVariable -->
+        <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
+    </rule>
+    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable">
+        <type>error</type>
+    </rule>
+    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
+        <properties>
+            <property name="allowUnusedCaughtExceptions" value="true"/>
+        </properties>
+    </rule>
+
+    <rule ref="./NeutronRuleset.xml">
         <exclude name="Generic.Classes.OpeningBraceSameLine"/>
         <exclude name="Generic.Formatting.SpaceAfterCast"/>
         <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
@@ -124,9 +137,11 @@
         <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions"/>
         <exclude name="WordPress.WhiteSpace.CastStructureSpacing"/>
         <exclude name="WordPress.WhiteSpace.ControlStructureSpacing"/>
-        <exclude name="WordPress.WhiteSpace.DisallowInlineTabs"/>
+        <exclude name="Universal.WhiteSpace.DisallowInlineTabs"/>
         <exclude name="WordPress.WhiteSpace.OperatorSpacing"/>
-        <exclude name="WordPress.WhiteSpace.PrecisionAlignment"/>
+        <exclude name="Universal.WhiteSpace.PrecisionAlignment"/>
+        <exclude name="NormalizedArrays.Arrays.ArrayBraceSpacing"/>
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
         <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
         <exclude name="WordPress.NamingConventions.ValidVariableName"/>
         <!-- Prefer Generic.PHP.NoSilencedErrors -->
@@ -134,19 +149,22 @@
 
         <exclude name="Squiz.Operators.IncrementDecrementUsage"/>
 
-        <exclude name="NeutronStandard.Whitespace.RequireParenthesisSpacing"/>
-        <exclude name="NeutronStandard.Constants.DisallowDefine"/>
-        <exclude name="NeutronStandard.StrictTypes.RequireStrictTypes"/>
+        <!-- Covered by forbidden functions rule -->
+        <exclude name="WordPress.PHP.DontExtract"/>
+        <!-- Covered by PSR12.Files.ImportStatement.LeadingSlash -->
+        <exclude name="Universal.UseStatements.NoLeadingBackslash"/>
 
         <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable"/>
-
-        <!-- https://github.com/sirbrillig/phpcs-import-detection/issues/45 -->
-        <exclude name="ImportDetection.Imports.RequireImports"/>
     </rule>
+
     <!-- WordPress-Core opposite rules -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <rule ref="Generic.ControlStructures.DisallowYodaConditions"/>
-    <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+    <rule ref="Generic.Formatting.SpaceAfterCast">
+        <properties>
+            <property name="spacing" value="0"/>
+        </properties>
+    </rule>
     <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing">
         <properties>
             <property name="spacing" value="0"/>
@@ -164,6 +182,18 @@
 
     <rule ref="WordPress-Extra"/>
 
+    <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+        <properties>
+            <property name="spacing" value="1"/>
+            <property name="spacingBeforeFirst" value="0"/>
+            <property name="spacingAfterLast" value="0"/>
+        </properties>
+    </rule>
+
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter">
+        <type>error</type>
+    </rule>
+
     <!-- TODO
     Look-and-See: https://github.com/squizlabs/PHP_CodeSniffer/tree/master/src/Standards/Squiz/Sniffs/PHP
     -->
@@ -173,8 +203,9 @@
         <properties>
             <property name="linesCountBeforeDeclare" value="1"/>
             <property name="linesCountAfterDeclare" value="1"/>
-            <property name="spacesCountAroundEqualsSign" value="0"/>
         </properties>
+        <!-- Covered by PSR12.Files.DeclareStatement -->
+        <exclude name="SlevomatCodingStandard.TypeHints.DeclareStrictTypes.IncorrectStrictTypesFormat"/>
     </rule>
     <!-- Namespace -->
     <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
@@ -203,7 +234,6 @@
     <rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
     <!-- Cleaning -->
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
-    <rule ref="SlevomatCodingStandard.Functions.UnusedParameter"/>
     <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses"/>
     <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace"/>
@@ -211,13 +241,11 @@
     <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion"/>
     <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc"/>
     <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
-    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
     <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
     <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
     <rule ref="SlevomatCodingStandard.Variables.UselessVariable"/>
     <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
     <!-- Formatting -->
-    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
     <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
@@ -229,11 +257,18 @@
     <rule ref="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
     <rule ref="SlevomatCodingStandard.Functions.DisallowArrowFunction"/>
+    <rule ref="SlevomatCodingStandard.Functions.FunctionLength">
+        <properties>
+            <property name="maxLinesLength" value="40"/>
+            <property name="includeComments" value="false"/>
+            <property name="includeWhitespace" value="false"/>
+        </properties>
+        <type>warning</type>
+    </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax"/>
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
     <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
     <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
-    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
     <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
     <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
@@ -245,9 +280,14 @@
             <property name="namespacesRequiredToUse" type="array"/>
         </properties>
     </rule>
-    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions">
+        <properties>
+            <property name="ignoredNames" type="array">
+                <element value="WP_Error"/>
+            </property>
+        </properties>
+    </rule>
     <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine"/>
-    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
     <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation"/>
     <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
     <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
