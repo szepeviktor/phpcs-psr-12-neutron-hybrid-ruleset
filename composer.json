@@ -22,7 +22,7 @@
         "wp-coding-standards/wpcs": "3.4.1 as 2.3.0"
     },
     "require-dev": {
-        "phpcompatibility/php-compatibility": "dev-develop as 10.0.0",
+        "phpcompatibility/php-compatibility": "^10.0@dev",
         "phpcsstandards/phpcsdevcs": "^1.1"
     },
     "suggest": {

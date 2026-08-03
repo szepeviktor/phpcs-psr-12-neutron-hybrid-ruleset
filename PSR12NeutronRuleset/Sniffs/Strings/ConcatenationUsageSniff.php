@@ -16,7 +16,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 /**
  * ConcatenationUsage sniff.
  */
-class ConcatenationUsageSniff implements Sniff
+final class ConcatenationUsageSniff implements Sniff
 {
 
     /**

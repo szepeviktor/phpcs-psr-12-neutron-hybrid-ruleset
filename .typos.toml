@@ -6,5 +6,6 @@ ignore-hidden = false
 
 [default.extend-identifiers]
 "Automattic" = "Automattic"
+"is_writeable" = "is_writeable"
 # Typos
 "Wordpress" = "WordPress"
